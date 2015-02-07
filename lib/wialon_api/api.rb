@@ -11,13 +11,13 @@ module WialonApi
       url = options.delete(:url)
       Faraday.new(url, WialonApi.faraday_options) do |builder|
         builder.request :url_encoded
-        builder.request :retry, Wialon.max_retries
+        builder.request :retry, WialonApi.max_retries
 
         builder.response :wialon_logger
         builder.response :mashify
         builder.response :oj, preserve_raw: true
 
-        builder.adapter Wialon.adapter
+        builder.adapter WialonApi.adapter
       end
     end
   end

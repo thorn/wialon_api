@@ -4,7 +4,7 @@ describe WialonApi::Authorization do
   describe '.authorize' do
     let(:success) { Hashie::Mash.new(eid: 'sid') }
     let(:error) { Hashie::Mash.new(error: '8') }
-    let(:credentials) { { login: 'user', password: 'password' } }
+    let(:credentials) { { user: 'user', password: 'password' } }
 
     it 'bulds a WialonApi client if the credentials are correct' do
       allow(WialonApi::Api).to receive(:call).and_return(success)
