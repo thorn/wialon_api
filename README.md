@@ -2,7 +2,7 @@
 [![Build Status](https://travis-ci.org/thorn/wialon_api.svg?branch=master)](https://travis-ci.org/thorn/wialon_api)
 [![Join the chat at https://gitter.im/thorn/wialon_api](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/thorn/wialon_api?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
-`wialon_api` is a ruby client for a [Wialon](http://sdk.wialon.com/) web-based GPS tracking software platform [API](http://sdk.wialon.com/).
+`wialon_api` is a ruby client for a [Wialon](http://wialon.com/) web-based GPS tracking software platform [API](http://sdk.wialon.com/).
 
 ## Installation
 
