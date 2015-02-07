@@ -6,7 +6,7 @@ describe WialonApi::Error do
   let(:error) { WialonApi::Error.new(error_data) }
 
   it '#message returns error message by it\'s code' do
-    message = 'Неверный ввод'
+    message = "Wialon server #{WialonApi.wialon_host} returned error 4: Invalid input"
     expect { fail error }.to raise_error(error.class, message)
   end
 end

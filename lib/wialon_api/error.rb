@@ -7,25 +7,30 @@ module WialonApi
 
     def initialize(data)
       @error_code = data.error
-      @message = error_descriptions[@error_code.to_s]
+      @message = "Wialon server #{WialonApi.wialon_host} returned error #{error_code}: #{error_descriptions[@error_code.to_s]}"
     end
 
     def error_descriptions
       {
-        '0' => 'Удачное выполнение операции',
-        '1' => 'Недействительная сессия',
-        '2' => 'Неверное имя сервиса',
-        '3' => 'Неверный результат',
-        '4' => 'Неверный ввод',
-        '5' => 'Ошибка выполнения запроса',
-        '6' => 'Неизвестная ошибка',
-        '7' => 'Доступ запрещен',
-        '8' => 'Неверный пароль или имя пользователя',
-        '9' => 'Сервер авторизации недоступен, пожалуйста попробуйте повторить запрос позже',
-        '1001' =>  'Нет сообщений для выбранного интервала',
-        '1002' =>  'Элемент с таким уникальным свойством уже существует',
-        '1003' =>  'Только один запрос разрешается в данный момент времени'
+        '0' => 'Successful operation (for example for logout it will be success exit)',
+        '1' => 'Invalid session',
+        '2' => 'Invalid service name',
+        '3' => 'Invalid result',
+        '4' => 'Invalid input',
+        '5' => 'Error performing request',
+        '6' => 'Unknown error',
+        '7' => 'Access denied',
+        '8' => 'Invalid user name or password',
+        '9' => 'Authorization server is unavailable',
+        '10' => 'Reached limit of concurrent requests',
+        '1001' => 'No messages for selected interval',
+        '1002' => 'Item with such unique property already exists or Item cannot be created according to billing restrictions',
+        '1003' => 'Only one request is allowed at the moment',
+        '2014' => 'Selected user is a creator for some system objects, thus this user cannot be bound to a new account'
       }
     end
   end
 end
+
+
+
