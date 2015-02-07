@@ -23,4 +23,14 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "rspec", "~> 3.2"
   spec.add_development_dependency 'pry'
   spec.add_development_dependency 'guard-rspec'
+
+  spec.add_development_dependency 'curb'
+  spec.add_development_dependency 'hashie'
+  spec.add_development_dependency 'faraday'
+  spec.add_development_dependency 'faraday_middleware'
+  spec.add_development_dependency 'faraday_middleware-parse_oj'
+
+  spec.add_development_dependency 'yard'
+  spec.add_development_dependency 'redcarpet'
+  spec.add_development_dependency 'guard-yard'
 end
