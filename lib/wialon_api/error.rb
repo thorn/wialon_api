@@ -1,3 +1,4 @@
+# encoding: utf-8
 module WialonApi
   class Error < StandardError
     attr_reader :error_code
