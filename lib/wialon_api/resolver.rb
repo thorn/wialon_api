@@ -10,11 +10,11 @@ module WialonApi
     private
 
     def create_namespace(name)
-      Wialon::Namespace.new(name, resolver: resolver)
+      WialonApi::Namespace.new(name, resolver: resolver)
     end
 
     def create_method(name)
-      Wialon::Method.new(name, resolver: resolver)
+      WialonApi::Method.new(name, resolver: resolver)
     end
 
     def call_method(args, &block)
