@@ -8,7 +8,7 @@ describe WialonApi::Api do
       builder.response :mashify
       builder.response :oj, preserve_raw: true
       builder.adapter :test do |stub|
-        stub.post('/wialon/ajax.html') do
+        stub.post('/') do
           [200, {}, Oj.dump(@result)]
         end
       end
@@ -23,7 +23,7 @@ describe WialonApi::Api do
     end
 
     it 'sends a sid if it was passed with parameter' do
-      expect(subject).to receive(:connection).with(url: WialonApi.wialon_host, sid: 'sid')
+      expect(subject).to receive(:connection).with(url: WialonApi.wialon_host)
       subject.call('core/search_items', { params: :value }, 'sid')
     end
   end

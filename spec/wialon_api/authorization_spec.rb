@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe WialonApi::Authorization do
   describe '.authorize' do
-    let(:success) { Hashie::Mash.new(eid: 'sid') }
+    let(:success) { Hashie::Mash.new(ssid: 'sid') }
     let(:error) { Hashie::Mash.new(error: '8') }
     let(:credentials) { ['user', 'password'] }
 
