@@ -2,12 +2,22 @@ require 'spec_helper'
 
 describe WialonApi::Authorization do
   describe '.authorize' do
-    let(:success) { Hashie::Mash.new(ssid: 'sid') }
+    let(:success) { Hashie::Mash.new(eid: 'sid') }
     let(:error) { Hashie::Mash.new(error: '8') }
     let(:credentials) { ['user', 'password'] }
 
     it 'bulds a WialonApi client if the credentials are correct' do
       allow(WialonApi::Api).to receive(:call).and_return(success)
+      expect(WialonApi::Client).to receive(:new).with('sid')
+      WialonApi.authorize(*credentials)
+    end
+
+    it "uses ssid with wialon pro edition" do
+      success = Hashie::Mash.new(ssid: 'sid')
+      allow(WialonApi::Api).to receive(:call).and_return(success)
+      WialonApi.configure do |config|
+        config.wialon_edition = :pro
+      end
       expect(WialonApi::Client).to receive(:new).with('sid')
       WialonApi.authorize(*credentials)
     end

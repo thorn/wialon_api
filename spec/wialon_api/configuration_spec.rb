@@ -21,6 +21,7 @@ describe WialonApi::Configuration do
     it 'resets all the values to their default values' do
       TestConfiguration.reset
       expect(TestConfiguration.wialon_host).to eq('https://hst-api.wialon.com/wialon/ajax.html')
+      expect(TestConfiguration.wialon_edition).to eq(:hosting)
       expect(TestConfiguration.http_verb).to eq(:post)
       expect(TestConfiguration.max_retries).to eq(1)
       expect(TestConfiguration.faraday_options).to eq({})
