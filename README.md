@@ -143,8 +143,13 @@ WialonApi.configure do |config|
 
   # Wialon server host
   # config.wialon_host = 'https://hst-api.wialon.com/wialon/ajax.html'
+
+  # Wialon server edition: :hosting, :local, :pro
+  # config.wialon_edition = :hosting
 end
 ```
+
+Note that `Wialon Pro` edition uses different parameters in requests, e.g. `ssid` vs `eid` as the session identifier. `WialonApi` gem handles these differences automatically.
 
 `Net::HTTP` is used by default for a HTTP requests. One can choose any [other adapter](https://github.com/technoweenie/faraday/blob/master/lib/faraday/adapter.rb) suported by `faraday`.
 

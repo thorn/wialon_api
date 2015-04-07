@@ -12,16 +12,6 @@ describe WialonApi::Authorization do
       WialonApi.authorize(*credentials)
     end
 
-    it "uses ssid with wialon pro edition" do
-      success = Hashie::Mash.new(ssid: 'sid')
-      allow(WialonApi::Api).to receive(:call).and_return(success)
-      WialonApi.configure do |config|
-        config.wialon_edition = :pro
-      end
-      expect(WialonApi::Client).to receive(:new).with('sid')
-      WialonApi.authorize(*credentials)
-    end
-
     it 'raises an error if password or login do not match' do
       allow(WialonApi::Api).to receive(:call).and_return(error)
       expect { WialonApi.authorize(*credentials) }.to raise_error(WialonApi::Error)
