@@ -27,4 +27,7 @@ WialonApi.configure do |config|
 
   # Wialon server host
   # config.wialon_host = 'https://hst-api.wialon.com/wialon/ajax.html'
+
+  # Wialon server edition: :hosting, :local, :pro
+  # config.wialon_edition = :hosting
 end
