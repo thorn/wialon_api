@@ -8,7 +8,7 @@ Gem::Specification.new do |spec|
   spec.version       = WialonApi::VERSION
   spec.authors       = ["Arsen Shamkhalov"]
   spec.email         = ["thornu731@gmail.com"]
-  spec.summary       = %q{Simple to use WialonPro API client. http://sdk.wialon.com/wiki/ru/pro/pro}
+  spec.summary       = %q{Simple to use Wialon API client. http://sdk.wialon.com/wiki/}
   spec.description   = %q{}
   spec.homepage      = "https://github.com/thorn/wialon_api"
   spec.license       = "MIT"
