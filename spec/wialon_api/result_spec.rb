@@ -74,8 +74,14 @@ describe WialonApi::Result do
 
     context 'with a success response' do
       let(:result) { Hashie::Mash.new(result_response) }
+      let(:result_array) { [Hashie::Mash.new(result_response)] }
+
       it 'returns plain result' do
         expect(WialonApi::Result.send(:extract_result, result)).to eq(result)
+      end
+
+      it 'returns plain array result' do
+        expect(WialonApi::Result.send(:extract_result, result_array)).to eq(result_array)
       end
     end
 

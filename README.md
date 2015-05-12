@@ -153,7 +153,7 @@ Note that `Wialon Pro` edition uses different parameters in requests, e.g. `ssid
 
 `Net::HTTP` is used by default for a HTTP requests. One can choose any [other adapter](https://github.com/technoweenie/faraday/blob/master/lib/faraday/adapter.rb) suported by `faraday`.
 
-Options for faraday connection (e.g. proxy settings or SSL certificates path) could be set through `faraday_options` when configuring `wialon_api`
+Options for faraday connection (e.g. proxy settings or SSL certificates path) could be set through `faraday_options` when configuring `wialon_api`.
 
 The default configuration could be generated in a Rails application using `wialon_api:install` command:
 

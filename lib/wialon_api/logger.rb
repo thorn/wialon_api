@@ -24,7 +24,7 @@ module WialonApi
     # Logs the response (successful or not) if needed.
     # @param [Hash] env Response data.
     def on_complete(env)
-      if env[:body].error?
+      if env[:body].respond_to?(:error) && env[:body].error?
         @logger.warn env[:raw_body] if WialonApi.log_errors?
       else
         @logger.debug env[:raw_body] if WialonApi.log_responses?
