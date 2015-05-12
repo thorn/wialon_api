@@ -10,7 +10,7 @@ module WialonApi
     end
 
     def self.extract_result(response)
-      if response.error
+      if response.respond_to?(:error) && response.error
         fail WialonApi::Error.new(response)
       else
         response

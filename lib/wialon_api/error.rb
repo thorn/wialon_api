@@ -2,7 +2,6 @@
 module WialonApi
   class Error < StandardError
     attr_reader :error_code
-    attr_reader :error_messages
     attr_reader :message
 
     def initialize(data)
@@ -31,6 +30,3 @@ module WialonApi
     end
   end
 end
-
-
-

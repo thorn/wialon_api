@@ -10,6 +10,7 @@ describe WialonApi::Logger do
   end
 
   let(:success_response) { Oj.dump('a' => 1, 'b' => 2) }
+  let(:success_array_response) { Oj.dump(['a' => 1, 'b' => 2])}
   let(:fail_response) { Oj.dump('error' => 404) }
 
   let(:connection) do
@@ -28,6 +29,10 @@ describe WialonApi::Logger do
           [200, {}, success_response]
         end
 
+        stub.get('/array_success') do
+          [200, {}, success_array_response]
+        end
+
         stub.get('/fail') do
           [200, {}, fail_response]
         end
@@ -43,6 +48,11 @@ describe WialonApi::Logger do
     it 'logs the request URL' do
       expect(WialonApi.logger).to receive(:debug).with('GET http://example.com/success')
       connection.get('/success')
+    end
+
+    it 'logs the request URL with array response' do
+      expect(WialonApi.logger).to receive(:debug).with('GET http://example.com/array_success')
+      connection.get('/array_success')
     end
 
     context 'with a POST request' do
