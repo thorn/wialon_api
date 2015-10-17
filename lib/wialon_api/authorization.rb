@@ -3,7 +3,7 @@ module WialonApi
     def authorize(user, password)
       response = WialonApi::Api.call('core/login', user: user, password: password)
       result = WialonApi::Result.process(response)
-      WialonApi::Client.new(result.send(WialonApi.wialon_client_session_identifier))
+      WialonApi::Client.new(result.send(WialonApi.wialon_client_session_identifier), result)
     end
   end
 end

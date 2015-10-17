@@ -8,7 +8,7 @@ describe WialonApi::Authorization do
 
     it 'bulds a WialonApi client if the credentials are correct' do
       allow(WialonApi::Api).to receive(:call).and_return(success)
-      expect(WialonApi::Client).to receive(:new).with('sid')
+      expect(WialonApi::Client).to receive(:new).with('sid', success)
       WialonApi.authorize(*credentials)
     end
 

@@ -2,10 +2,11 @@ module WialonApi
   class Client
     include WialonApi::Resolver
 
-    attr_reader :sid
+    attr_reader :sid, :info
 
-    def initialize(sid = nil)
+    def initialize(sid = nil, info = {})
       @sid = sid
+      @info = info
     end
 
     def authorized?
