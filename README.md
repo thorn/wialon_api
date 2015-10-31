@@ -25,46 +25,46 @@ Or install it yourself as:
 ### Api method call
 
 ```ruby
-# The first thing to do is to authorize client
-client = WialonApi.authorize("wialon_test", "test")
-
-# Now we can use API
-client.core.get_account_data(type: 1)
-# => {"plan"=>"Gurtam External",
-#  "enabled"=>1,
-#  "flags"=>16,
-#  "created"=>1362386585,
-#  "balance"=>"0.00",
-#  "daysCounter"=>0,
-#  "services"=>
-#   ....
-
-# API calls with nested params could be implemented as follows
-client.core.search_items({
-  "spec" => {
-    "itemsType" => "avl_unit",
-    "propName" => "sys_name",
-    "propValueMask" => "*",
-    "sortType" => "sys_name"
-  },
-  "force" => 1,
-  "flags" => 0x3FFFFFFFFFFFFFFF,
-  "from" => 0,
-  "to" => 0
-})
-
-=> {"searchSpec"=>{"itemsType"=>"avl_unit", "propName"=>"sys_name", "propValueMask"=>"*", "sortType"=>"sys_name", "propType"=>""},
-# "dataFlags"=>4611686018427387903,
-# "totalItemsCount"=>27,
-# "indexFrom"=>0,
-# "indexTo"=>0,
-# "items"=>
-#  [{"nm"=>"_TK102",
-#    "cls"=>2,
-#    "id"=>12417697,
-#    "prp"=>{},
-#    "crt"=>717313,
-#     ..........
+    # The first thing to do is to authorize client
+    client = WialonApi.authorize("wialon_test", "test")
+    
+    # Now we can use API
+    client.core.get_account_data(type: 1)
+    # => {"plan"=>"Gurtam External",
+    #  "enabled"=>1,
+    #  "flags"=>16,
+    #  "created"=>1362386585,
+    #  "balance"=>"0.00",
+    #  "daysCounter"=>0,
+    #  "services"=>
+    #   ....
+    
+    # API calls with nested params could be implemented as follows
+    client.core.search_items({
+      "spec" => {
+        "itemsType" => "avl_unit",
+        "propName" => "sys_name",
+        "propValueMask" => "*",
+        "sortType" => "sys_name"
+      },
+      "force" => 1,
+      "flags" => 0x3FFFFFFFFFFFFFFF,
+      "from" => 0,
+      "to" => 0
+    })
+    
+    => {"searchSpec"=>{"itemsType"=>"avl_unit", "propName"=>"sys_name", "propValueMask"=>"*", "sortType"=>"sys_name", "propType"=>""},
+    # "dataFlags"=>4611686018427387903,
+    # "totalItemsCount"=>27,
+    # "indexFrom"=>0,
+    # "indexTo"=>0,
+    # "items"=>
+    #  [{"nm"=>"_TK102",
+    #    "cls"=>2,
+    #    "id"=>12417697,
+    #    "prp"=>{},
+    #    "crt"=>717313,
+    #     ..........
 ```
 
 `wialon_api` uses a list of namespaces from API documentation:
